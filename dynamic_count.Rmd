@@ -1,0 +1,33 @@
+---
+title: "count while dicing"
+---
+
+```{r, include=FALSE}
+options(knitr.duplicate.label = "allow")
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = F, echo = F)
+library(flipbookr)
+```
+
+
+```{r build, echo = F}
+library(tidyverse)
+mtcars %>% 
+  ggplot() +
+  aes(x = "all") +
+  geom_bar(position = position_dodge2(preserve = "single")) + 
+  stat_count(geom = "text",
+             aes(label = ..count..),
+             position = 
+               position_dodge2(width = 1,
+                              preserve = "single")) + #BREAK
+  aes(x = factor(vs)) + #BREAK
+  aes(fill = factor(gear)) + #BREAK
+  facet_grid(factor(cyl)~.) #BREAK
+```
+
+```{r, echo = T}
+embed_flipbook("build", font_size = 90, 
+               use_embed_xaringan = T,
+               break_type = "user")
+```
+
