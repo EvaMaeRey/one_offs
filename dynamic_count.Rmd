@@ -9,25 +9,60 @@ library(flipbookr)
 ```
 
 
-```{r build, echo = F}
+
+```{r titanic, include = F}
 library(tidyverse)
-mtcars %>% 
+Titanic %>% 
+  as.data.frame() %>% 
+  uncount(weights = Freq) %>% 
   ggplot() +
-  aes(x = "all") +
-  geom_bar(position = position_dodge2(preserve = "single")) + 
+  ggthemes::theme_igray() +
+  aes(x = 1) + labs(x = NULL) +
+  geom_bar(position = 
+             position_dodge2(preserve = "single")) + #BREAK
   stat_count(geom = "text",
-             aes(label = ..count..),
+             aes(label = after_stat(count), 
+                 y = after_stat(count) + 65),
+             vjust = 0,
+             size = 4,
              position = 
-               position_dodge2(width = 1,
-                              preserve = "single")) + #BREAK
-  aes(x = factor(vs)) + #BREAK
-  aes(fill = factor(gear)) + #BREAK
-  facet_grid(factor(cyl)~.) #BREAK
+               position_dodge2(width = .9,
+                               preserve = "single")) + #BREAK
+  aes(fill = Survived) + 
+  theme(legend.position = "top") +
+  theme(legend.justification = 0) +
+  scale_fill_viridis_d(option = "inferno") + #BREAK
+  aes(x = Sex) + #BREAK
+  facet_grid(Class~.) + 
+  scale_y_continuous(expand = expansion(mult = c(.025, .3))) + #BREAK
+  facet_grid(Class~Age) #BREAK
+
 ```
 
-```{r, echo = T}
-embed_flipbook("build", font_size = 90, 
+
+```{r}
+embed_flipbook("titanic", 
+               font_size = 90, 
                use_embed_xaringan = T,
+               use_share_again = T,
+               display_type = "output", 
                break_type = "user")
 ```
+
+
+```{r}
+embed_flipbook("titanic", 
+               title = "code and titanic",
+               rmd_path = "titanic_show_code.Rmd",
+               url = "titanic_show_code.html",
+               font_size = 90, 
+               use_embed_xaringan = T,
+               use_share_again = T)
+```
+
+
+
+
+
+
 

@@ -33,8 +33,12 @@ count: false
 * ggplot() +
 * aes(x = "all") +
 * geom_bar(position = position_dodge2(preserve = "single")) +
+* geom_bar(data = . %&gt;% complete(vs, gear, cyl) ,
+*          alpha = .2,
+*          position = position_dodge2(preserve = "single")) +
 * stat_count(geom = "text",
 *            aes(label = ..count..),
+*            size = 5,
 *            position =
 *              position_dodge2(width = 1,
 *                             preserve = "single"))
@@ -57,8 +61,12 @@ mtcars %&gt;%
   ggplot() +
   aes(x = "all") +
   geom_bar(position = position_dodge2(preserve = "single")) +
+  geom_bar(data = . %&gt;% complete(vs, gear, cyl) ,
+           alpha = .2,
+           position = position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
              aes(label = ..count..),
+             size = 5,
              position =
                position_dodge2(width = 1,
                               preserve = "single")) +
@@ -82,8 +90,12 @@ mtcars %&gt;%
   ggplot() +
   aes(x = "all") +
   geom_bar(position = position_dodge2(preserve = "single")) +
+  geom_bar(data = . %&gt;% complete(vs, gear, cyl) ,
+           alpha = .2,
+           position = position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
              aes(label = ..count..),
+             size = 5,
              position =
                position_dodge2(width = 1,
                               preserve = "single")) +
@@ -108,8 +120,12 @@ mtcars %&gt;%
   ggplot() +
   aes(x = "all") +
   geom_bar(position = position_dodge2(preserve = "single")) +
+  geom_bar(data = . %&gt;% complete(vs, gear, cyl) ,
+           alpha = .2,
+           position = position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
              aes(label = ..count..),
+             size = 5,
              position =
                position_dodge2(width = 1,
                               preserve = "single")) +
@@ -121,6 +137,37 @@ mtcars %&gt;%
  
 .panel2-the_chunk-user[
 &lt;img src="build_files/figure-html/the_chunk_user_04_output-1.png" width="576" /&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-the_chunk-user[
+
+```r
+library(tidyverse)
+mtcars %&gt;%
+  ggplot() +
+  aes(x = "all") +
+  geom_bar(position = position_dodge2(preserve = "single")) +
+  geom_bar(data = . %&gt;% complete(vs, gear, cyl) ,
+           alpha = .2,
+           position = position_dodge2(preserve = "single")) +
+  stat_count(geom = "text",
+             aes(label = ..count..),
+             size = 5,
+             position =
+               position_dodge2(width = 1,
+                              preserve = "single")) +
+  aes(x = factor(vs)) +
+  aes(fill = factor(gear)) +
+  facet_grid(factor(cyl)~.)
+```
+]
+ 
+.panel2-the_chunk-user[
+&lt;img src="build_files/figure-html/the_chunk_user_05_output-1.png" width="576" /&gt;
 ]
 
 &lt;style&gt;

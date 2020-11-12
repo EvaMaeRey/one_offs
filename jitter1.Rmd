@@ -1,0 +1,68 @@
+---
+title: "jitter1"
+subtitle: ""
+author: ""
+output:
+  xaringan::moon_reader:
+    seal: FALSE
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r, include = F}
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = F)
+library(flipbookr)
+library(tidyverse)
+load("current_image.Rdata")
+```
+
+
+```{r, echo = F, eval = FALSE , message = F, warning = F}
+xaringanExtra::use_share_again()
+```
+
+
+```{r the_chunk, include = F}
+base %>% 
+  group_by(category, year) %>% 
+  mutate(pos = as.numeric(name) - 1) %>% 
+  mutate(nudge_x = pos %% 3) %>% 
+  mutate(nudge_y = pos %/% 3) %>% 
+  mutate(fct_cat = as.factor(category)) %>% 
+  mutate(num_cat = as.numeric(fct_cat)) ->
+prep
+
+prep %>% 
+  ggplot() +
+  aes(x = year, y = category) +
+  geom_point(size = 3,
+             alpha = .4) +
+  scale_y_reverse() +
+  aes(color = name) + 
+  aes(x = year + nudge_x / 5) +
+  aes(y = num_cat + nudge_y / 5) +
+  labs(title = "No jittering; overplotting") +
+  theme(legend.position = "bottom") 
+```
+
+`r chunk_reveal(chunk_name = "the_chunk", break_type = "auto", ...)`
+
+
+
+```{css, eval = TRUE, echo = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+```
+
