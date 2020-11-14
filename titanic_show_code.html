@@ -2420,7 +2420,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-* aes(x = 1) + labs(x = NULL)
+* aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank())
 ```
 ]
  
@@ -2441,7 +2441,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
 * geom_bar(position =
 *            position_dodge2(preserve = "single"))
 ```
@@ -2464,7 +2464,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
 * stat_count(geom = "text",
@@ -2495,7 +2495,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2527,7 +2527,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2560,7 +2560,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2594,7 +2594,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2629,7 +2629,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2644,7 +2644,7 @@ Titanic %&gt;%
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_viridis_d(option = "inferno") +
-* aes(x = Sex)
+* aes(x = Sex) + theme(axis.text.x = element_text())
 ```
 ]
  
@@ -2665,7 +2665,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2680,7 +2680,7 @@ Titanic %&gt;%
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_viridis_d(option = "inferno") +
-  aes(x = Sex) +
+  aes(x = Sex) + theme(axis.text.x = element_text()) +
 * facet_grid(Class~.)
 ```
 ]
@@ -2702,7 +2702,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2717,7 +2717,7 @@ Titanic %&gt;%
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_viridis_d(option = "inferno") +
-  aes(x = Sex) +
+  aes(x = Sex) + theme(axis.text.x = element_text()) +
   facet_grid(Class~.) +
 * scale_y_continuous(expand = expansion(mult = c(.025, .3)))
 ```
@@ -2740,7 +2740,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2755,7 +2755,7 @@ Titanic %&gt;%
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_viridis_d(option = "inferno") +
-  aes(x = Sex) +
+  aes(x = Sex) + theme(axis.text.x = element_text()) +
   facet_grid(Class~.) +
   scale_y_continuous(expand = expansion(mult = c(.025, .3))) +
 * facet_grid(Class~Age)
@@ -2779,7 +2779,7 @@ Titanic %&gt;%
   uncount(weights = Freq) %&gt;%
   ggplot() +
   ggthemes::theme_igray() +
-  aes(x = 1) + labs(x = NULL) +
+  aes(x = 1) + labs(x = NULL) + theme(axis.text.x = element_blank()) +
   geom_bar(position =
              position_dodge2(preserve = "single")) +
   stat_count(geom = "text",
@@ -2794,7 +2794,7 @@ Titanic %&gt;%
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_viridis_d(option = "inferno") +
-  aes(x = Sex) +
+  aes(x = Sex) + theme(axis.text.x = element_text()) +
   facet_grid(Class~.) +
   scale_y_continuous(expand = expansion(mult = c(.025, .3))) +
   facet_grid(Class~Age)

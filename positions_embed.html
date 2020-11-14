@@ -42,7 +42,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = "dodge2") +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -72,7 +72,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = "identity") +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -102,7 +102,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = "fill") +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -132,7 +132,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = position_dodge2(preserve = "single")) +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -162,7 +162,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = position_dodge2(preserve = "single", padding = .2)) +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -192,7 +192,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = position_dodge2(preserve = "single", reverse = T)) +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -222,7 +222,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = position_dodge2(preserve = "total", reverse = T)) +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -252,7 +252,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = position_dodge(preserve = "single")) +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -282,7 +282,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = position_dodge(width = 0.6)) +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -312,7 +312,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = "stack") +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
@@ -342,7 +342,7 @@ tibble(type = sample(LETTERS[1:3], n, replace = T),
   ggplot() +
   ggthemes::theme_igray() +
 * geom_bar(position = "dodge") +
-  aes(fill = event_occurs) +
+  aes(fill = factor(event_occurs)) +
   theme(legend.position = "top") +
   theme(legend.justification = 0) +
   scale_fill_manual(values = c("plum4", "goldenrod1") ) +
